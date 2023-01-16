@@ -1,13 +1,13 @@
-package com.masterbare.primeiroexemplo;
+package com.masterbare.backendlivro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrimeiroExemploApplication {
+public class BackendLivroApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrimeiroExemploApplication.class, args);
+		SpringApplication.run(BackendLivroApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.masterbare.primeiroexemplo.controller;
+package com.masterbare.backendlivro.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,40 +12,40 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.masterbare.primeiroexemplo.model.Produto;
-import com.masterbare.primeiroexemplo.services.ProdutoService;
+import com.masterbare.backendlivro.model.Livro;
+import com.masterbare.backendlivro.services.LivroService;
 
 @RestController
-@RequestMapping("/api/produtos")
-public class ProdutoController {
+@RequestMapping("/api/livros")
+public class LivroController {
 
     @Autowired
-    private ProdutoService produtoService;
+    private LivroService livroService;
 
     @GetMapping
-    public List<Produto> obterTodos() {
-        return produtoService.obterTodos();
+    public List<Livro> obterTodos() {
+        return livroService.obterTodos();
     }
 
     @GetMapping("/{id}")
-    public Optional<Produto> obterPorId(@PathVariable Long id) {
-        return produtoService.obterPorId(id);
+    public Optional<Livro> obterPorId(@PathVariable Long id) {
+        return livroService.obterPorId(id);
     }
 
     @PostMapping
-    public Produto adicionar(@RequestBody Produto produto) {
-        return produtoService.adicionar(produto);
+    public Livro adicionar(@RequestBody Livro livro) {
+        return livroService.adicionar(livro);
     }
 
     @DeleteMapping("/{id}")
     public String deletar(@PathVariable Long id) {
-        produtoService.deletar(id);
-        return "Produto com id:" + id + " foi deletado com sucesso!";
+        livroService.deletar(id);
+        return "Livro com id:" + id + " foi deletado com sucesso!";
     }
     
     @PutMapping("/{id}")
-    public Produto atualizar(@RequestBody Produto produto, @PathVariable long id) {
+    public Livro atualizar(@RequestBody Livro livro, @PathVariable long id) {
 
-        return produtoService.atualizar(id, produto);
+        return livroService.atualizar(id, livro);
     }
 }
